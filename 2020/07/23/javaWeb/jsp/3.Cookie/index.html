@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>javaWeb/jsp/3.Cookie | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Cookiesession对象使用Cookie存储在客户端的 1.什么是Cookiecookie是Netscape公司发明，由服务端生成并发送给客户端，浏览器会保存至目录下的某个文本文件。 当用户在浏览网站时，web服务器会将一些资料存放在客户端，其中包括用户在浏览网站时输入的一些文本和选择记录，当用户下一次访问该网站时，服务端会先从客户端查看是否会有保留的cookie信息，然后依据cookie内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaWeb&#x2F;jsp&#x2F;3.Cookie">
+<meta property="og:url" content="https://sixrabbitbychina.github.io.git/2020/07/23/javaWeb/jsp/3.Cookie/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Cookiesession对象使用Cookie存储在客户端的 1.什么是Cookiecookie是Netscape公司发明，由服务端生成并发送给客户端，浏览器会保存至目录下的某个文本文件。 当用户在浏览网站时，web服务器会将一些资料存放在客户端，其中包括用户在浏览网站时输入的一些文本和选择记录，当用户下一次访问该网站时，服务端会先从客户端查看是否会有保留的cookie信息，然后依据cookie内">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-23T06:07:08.333Z">
+<meta property="article:modified_time" content="2020-06-03T08:34:58.607Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SixRabbitByChina.github.io.git"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javaWeb/jsp/3.Cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/javaWeb/jsp/3.Cookie/" class="article-date">
+  <time datetime="2020-07-23T06:07:08.333Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javaWeb/jsp/3.Cookie
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>session对象使用Cookie存储在<strong>客户端</strong>的</p>
+<h2 id="1-什么是Cookie"><a href="#1-什么是Cookie" class="headerlink" title="1.什么是Cookie"></a>1.什么是Cookie</h2><p>cookie是Netscape公司发明，由<strong>服务端</strong>生成并发送给<strong>客户端</strong>，浏览器会保存至目录下的某个文本文件。</p>
+<p>当用户在浏览网站时，web服务器会将一些资料存放在客户端，其中包括用户在浏览网站时输入的一些文本和选择记录，当用户<strong>下一次</strong>访问该网站时，服务端会先从客户端查看是否会有保留的cookie信息，然后依据cookie内容呈现特定的内容给客户</p>
+<h2 id="2-怎么使用cookie"><a href="#2-怎么使用cookie" class="headerlink" title="2.怎么使用cookie"></a>2.怎么使用cookie</h2><ol>
+<li><p>创建cookie对象    </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie newCookie = <span class="keyword">new</span> Cookie(String name,String value)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写入cookie</p>
+<p>可以使用response对象的addCookie()方法。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.addCookie(newCookie);</span><br></pre></td></tr></table></figure>
+
+<table>
+    <tr>
+        <td>方法名称</td>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>void setMaxAge(int expiry)</td>
+        <td>设置cookie的有效期，以秒为单位</td>
+    </tr>
+    <tr>
+        <td>String getName()</td>
+        <td>获得cookie的名称</td>
+    </tr>
+    <tr>
+        <td>String getValue()</td>
+        <td>获取cookie的值</td>
+    </tr>
+    <tr>
+        <td>int getMaxAge(int expiry)</td>
+        <td>获取cookie的有效期，以秒为单位</td>
+    </tr>
+</table>
+</li>
+<li><p>读取cookie</p>
+<p>response对象的addCookie()方法写入cookie后，读取时需要调用JSP中的request对象的getCookies()方法返回HTTP请求中的cookie对象数组。</p>
+<p>cookie是通过name/value方式进行保存的，所以在找值时应该对每一个cookie经行遍历检查。</p>
+</li>
+</ol>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		Cookie[] cookies = request.getCookies();</span><br><span class="line">		String user = <span class="string">""</span>;</span><br><span class="line">		String password = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">if</span>(cookies != <span class="keyword">null</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; cookies.length;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(cookies[i].getName().equals(<span class="string">"test"</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					user = cookies[i].getValue();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		out.print(user);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当cookie不存储信息时，默认存储sessionid这一条数据。</p>
+<h2 id="3-cookie有效期"><a href="#3-cookie有效期" class="headerlink" title="3.cookie有效期"></a>3.cookie有效期</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sixrabbitbychina.github.io.git/2020/07/23/javaWeb/jsp/3.Cookie/" data-id="ckcyelbob00061sv2776w5kxc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/23/javaWeb/Servlet/%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javaWeb/Servlet/笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/23/javaWeb/jsp/2.JSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javaWeb/jsp/2.JSP内置对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/23/linux/%E7%AC%94%E8%AE%B0/">linux/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/%E6%B3%A8%E8%A7%A3/@WebServlet/">javaWeb/注解/@WebServlet</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E8%A8%80/">javaWeb/Servlet/表达式语言</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E7%AC%94%E8%AE%B0/">javaWeb/Servlet/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/jsp/3.Cookie/">javaWeb/jsp/3.Cookie</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

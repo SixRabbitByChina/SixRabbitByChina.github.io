@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>linux/笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Linux指令在使用linux的shell指令前，请仔细阅读一下事项（血与泪的教训）  shell指令区分大小写 部分dos指令在kaliLinux通用，但是不要去使用 加粗部分仔细阅读 重要的事情看三遍  1.whoami whoami(我是谁？)  1$ whoami  可以通过这个指令获取登录的用户  2.who、w、users和tty指令 who(谁？)  1$ who   用来查看现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux&#x2F;笔记">
+<meta property="og:url" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Linux指令在使用linux的shell指令前，请仔细阅读一下事项（血与泪的教训）  shell指令区分大小写 部分dos指令在kaliLinux通用，但是不要去使用 加粗部分仔细阅读 重要的事情看三遍  1.whoami whoami(我是谁？)  1$ whoami  可以通过这个指令获取登录的用户  2.who、w、users和tty指令 who(谁？)  1$ who   用来查看现">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/whoami.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/w.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/users.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/tty.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/mv.png">
+<meta property="og:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/mv2.png">
+<meta property="article:published_time" content="2020-07-23T06:08:35.801Z">
+<meta property="article:modified_time" content="2020-07-15T07:59:35.825Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/image/whoami.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SixRabbitByChina.github.io.git"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux/笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/linux/%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-07-23T06:08:35.801Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux/笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Linux指令"><a href="#1-Linux指令" class="headerlink" title="1.Linux指令"></a>1.Linux指令</h1><p><strong>在使用linux的shell指令前，请仔细阅读一下事项（血与泪的教训）</strong></p>
+<ol>
+<li><strong>shell指令区分大小写</strong></li>
+<li><strong>部分dos指令在kaliLinux通用，但是不要去使用</strong></li>
+<li><strong>加粗部分仔细阅读</strong></li>
+<li><strong>重要的事情看三遍</strong></li>
+</ol>
+<h2 id="1-whoami"><a href="#1-whoami" class="headerlink" title="1.whoami"></a>1.whoami</h2><blockquote>
+<p>whoami(我是谁？)</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ whoami</span><br></pre></td></tr></table></figure>
+
+<p>可以通过这个指令获取登录的用户</p>
+<p><img src="image/whoami.png" alt="whoami"></p>
+<h2 id="2-who、w、users和tty指令"><a href="#2-who、w、users和tty指令" class="headerlink" title="2.who、w、users和tty指令"></a>2.who、w、users和tty指令</h2><blockquote>
+<p>who(谁？)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> who</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="image/w.png" alt="w"></p>
+<p>用来查看现在有哪些用户在这个系统上工作。</p>
+<p><strong>分析</strong></p>
+<ul>
+<li>21:08:43表示现在的时间</li>
+<li>up 4 min表示系统启动了4分钟</li>
+<li>1 user表示现在登陆了几个用户</li>
+<li>load average为平均负载值：分别为在过去的一分钟内平均提交0.44个任务，十分钟内平均提交0.64个任务，十五分钟内平均提交0.33个任务</li>
+</ul>
+<p><strong>用户</strong></p>
+<ul>
+<li>USER 为用户名</li>
+<li>tty表示改用户的终端</li>
+<li>@LOGIN@为登录时间</li>
+<li>IDLE为该用户的空闲时间</li>
+<li>JCPU表示该用户使用的cpu总时长</li>
+<li>PCPU表示当前该用户使用的程序使用了多长的cpu</li>
+<li>WHAT 表示该用户正在运行的程序</li>
+</ul>
+<blockquote>
+<p>users(用户？)、tty(终端、打印机)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> users</span></span><br></pre></td></tr></table></figure>
+
+<p>显示使用过这个终端的用户。</p>
+<p><img src="image/users.png" alt="users"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tty</span></span><br></pre></td></tr></table></figure>
+
+<p>显示终端的路径</p>
+<p><img src="image/tty.png" alt="tty"></p>
+<h2 id="3-uname"><a href="#3-uname" class="headerlink" title="3.uname"></a>3.uname</h2><blockquote>
+<p>uname(UNIX name)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> uanme -[额外指令]</span></span><br></pre></td></tr></table></figure>
+
+<p>显示与用户相关的信息</p>
+<p><strong>额外指令</strong></p>
+<ul>
+<li>-r(release)该系统的版本号</li>
+<li>-s(system)该系统名</li>
+<li>-m(machine)显示该系统的硬件名</li>
+<li>-a(all)显示所用信息</li>
+</ul>
+<p>![uname -a](image/uname -a.png)</p>
+<h2 id="4-date、cal和clear命令"><a href="#4-date、cal和clear命令" class="headerlink" title="4.date、cal和clear命令"></a>4.date、cal和clear命令</h2><blockquote>
+<p>date(时间)和cal(calender日历)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> date</span></span><br></pre></td></tr></table></figure>
+
+<p>显示现在的时间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cal [月份] [年份]</span></span><br></pre></td></tr></table></figure>
+
+<p>以日历形式显示时间</p>
+<blockquote>
+<p>clear(打扫、清屏)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> clear</span></span><br></pre></td></tr></table></figure>
+
+<p>清理屏幕</p>
+<h2 id="5-su和passwd"><a href="#5-su和passwd" class="headerlink" title="5.su和passwd"></a>5.su和passwd</h2><blockquote>
+<p>exit(退出||登出)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
+
+<p>登出，推出现在用户</p>
+<blockquote>
+<p>useradd(添加新用户)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> useradd [用户名]</span></span><br></pre></td></tr></table></figure>
+
+<p>添加新用户，密码为空</p>
+<blockquote>
+<p>passwd(密码)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> passwd [用户名]</span></span><br></pre></td></tr></table></figure>
+
+<p>可以通过该选项修改密码。root可以直接修改其他用户的密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> passwd -s [用户名]</span></span><br></pre></td></tr></table></figure>
+
+<p>查看用户的密码状态</p>
+<blockquote>
+<p>su(switch user 更换用户)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> su -[用户名]</span></span><br></pre></td></tr></table></figure>
+
+<p>更换用户</p>
+<h2 id="6-whatis和help"><a href="#6-whatis和help" class="headerlink" title="6.whatis和help"></a>6.whatis和help</h2><blockquote>
+<p>whatis(这是什么？)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">whatis [指令]</span></span><br></pre></td></tr></table></figure>
+
+<p>基于当前指令显示出帮助页面</p>
+<blockquote>
+<p>help(帮助)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">help</span></span></span><br></pre></td></tr></table></figure>
+
+<p>通常用作为后缀，显示出该指令的帮助页面</p>
+<p>额外内容info和man pages</p>
+<h1 id="2-目录文件结构和指令"><a href="#2-目录文件结构和指令" class="headerlink" title="2.目录文件结构和指令"></a>2.目录文件结构和指令</h1><blockquote>
+<p>目录结构</p>
+</blockquote>
+<p><img src="image/%E7%9B%AE%E5%BD%95.png" alt="目录"></p>
+<blockquote>
+<p>重要文件结构</p>
+</blockquote>
+<p>linux采用的FHS结构管理文件目录</p>
+<ul>
+<li>bin目录<ul>
+<li>一般用来存放可执行文件</li>
+</ul>
+</li>
+<li>sbin(system bin)目录<ul>
+<li>用来存放系统可执行文件</li>
+</ul>
+</li>
+<li>home目录<ul>
+<li>每次登录都会默认进入该目录</li>
+</ul>
+</li>
+<li>media或者是mnt目录（有兴趣的问我）</li>
+<li>etc目录<ul>
+<li>用来存放主要配置文件</li>
+<li>存放ASCII码的正文文件，只有root可以修改，普通用户可以访问</li>
+</ul>
+</li>
+<li>tmp目录（temp 临时文件）</li>
+<li>boot目录<ul>
+<li>用来存放核心文件</li>
+</ul>
+</li>
+<li>dev目录<ul>
+<li>驱动文件存放地点</li>
+</ul>
+</li>
+<li>usr目录<ul>
+<li>应用目录存放的地点类似于windows的Program Files</li>
+</ul>
+</li>
+<li>var目录<ul>
+<li>存放日志或者mail文件</li>
+</ul>
+</li>
+<li>srv目录<ul>
+<li>存放服务的目录</li>
+</ul>
+</li>
+<li>proc目录<ul>
+<li>用来存放虚拟内存的目录</li>
+</ul>
+</li>
+<li>libs、usr/lib、usr/local/lib<ul>
+<li>存放必要运行的库文件或者说是库函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-pwd和cd命令"><a href="#1-pwd和cd命令" class="headerlink" title="1.pwd和cd命令"></a>1.pwd和cd命令</h2><blockquote>
+<p>pwd(print working directory)打印工作目录</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">pwd</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>cd(change directories)切换目录</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> /[目录名]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-ls命令"><a href="#2-ls命令" class="headerlink" title="2.ls命令"></a>2.ls命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls</span></span><br></pre></td></tr></table></figure>
+
+<p>显示当前目录下的所有文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls ..</span></span><br></pre></td></tr></table></figure>
+
+<p>显示上一级目录下的所有文件</p>
+<h3 id="1-F"><a href="#1-F" class="headerlink" title="1.-F"></a>1.-F</h3><p><strong>注意：”..”表示上一级目录，”.”表示当前目录</strong></p>
+<p>显示的文件内型：</p>
+<ul>
+<li>“\“:表示只显示目录</li>
+<li>“*”:表示可执行文件</li>
+<li>“@”:表示符号链接（感兴趣的询问鄙人）</li>
+<li>什么也没有表示纯文本和</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -F</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-a和–all"><a href="#2-a和–all" class="headerlink" title="2.-a和–all"></a>2.-a和–all</h3><p>有些文件是隐藏的，为了查看可以使用-a附加指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -a</span></span><br></pre></td></tr></table></figure>
+
+<p>该指令与ls –all等价，可以用来显示多个文件夹中的文件</p>
+<h3 id="3-l"><a href="#3-l" class="headerlink" title="3.-l"></a>3.-l</h3><p>以列表形式显示文件目录，可以和其他附加指令共同使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -l -a</span></span><br></pre></td></tr></table></figure>
+
+<p>与ls -la等价</p>
+<h3 id="4-h"><a href="#4-h" class="headerlink" title="4.-h"></a>4.-h</h3><p>显示文件的大小</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -l -h</span></span><br></pre></td></tr></table></figure>
+
+<p>与ls -lh等价。一般和-l混用</p>
+<h3 id="5-lR"><a href="#5-lR" class="headerlink" title="5.-lR"></a>5.-lR</h3><p>显示文件目录和子目录的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -lR</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-模糊查询显示"><a href="#6-模糊查询显示" class="headerlink" title="6.*模糊查询显示"></a>6.*模糊查询显示</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls d*</span></span><br></pre></td></tr></table></figure>
+
+<p>显示以d开头的文件，以此类推</p>
+<p><strong>注意：文件夹区分大小写</strong></p>
+<h2 id="3-cp指令（copy）"><a href="#3-cp指令（copy）" class="headerlink" title="3.cp指令（copy）"></a>3.cp指令（copy）</h2><blockquote>
+<p>copy(copy)复制</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">cp [附加指令&lt;选项&gt;] 数据源&lt;<span class="built_in">source</span>(s)&gt; target</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>附加指令&lt;option(s)&gt;<ul>
+<li>-i(interactive交互的):防止不小心覆盖已存在的文件或者目录，并给出提醒</li>
+<li>-r(recursive递归的):复制目录中的所有文件</li>
+<li>-p(preserve维持的:)保留一些特定的属性（特性）,如时间戳等</li>
+<li>-f(forc强制的:)直接覆盖原有目录</li>
+<li>-a(all全部指令模式)含有以上所有特性</li>
+</ul>
+</li>
+</ul>
+<p>数据源：指的是需要赋值的文件</p>
+<p>target：复制到那的地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls <span class="built_in">test</span> /root</span></span><br></pre></td></tr></table></figure>
+
+<p>将本目录下的test复制到root文件下</p>
+<p><strong>注意：linux和unix复制文件只有在出错的时候才会抛出错误，所以谨慎使用</strong></p>
+<h3 id="1-使用-进行复制"><a href="#1-使用-进行复制" class="headerlink" title="1.使用*进行复制"></a>1.使用*进行复制</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls t* /root</span></span><br></pre></td></tr></table></figure>
+
+<p>将t开头的文件全部复制到root文件夹下，以次类推</p>
+<h2 id="4-mv命令及修改文件夹和目录名"><a href="#4-mv命令及修改文件夹和目录名" class="headerlink" title="4.mv命令及修改文件夹和目录名"></a>4.mv命令及修改文件夹和目录名</h2><blockquote>
+<p>mv(move移动)</p>
+</blockquote>
+<p>用来<strong>移动</strong>文件，也可以重新命名文件名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mv <span class="built_in">test</span> /root</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="image/mv.png" alt="mv"></p>
+<p><strong>注意:移动文件夹注意一下是否有”/“，否则或被当作修改文件名处理</strong></p>
+<p><strong>建议使用绝对路径</strong></p>
+<h3 id="1-使用mv搬用多个文件"><a href="#1-使用mv搬用多个文件" class="headerlink" title="1.使用mv搬用多个文件"></a>1.使用mv搬用多个文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">mv test01 test02 /root</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:运输多个文件必须使用绝对路径、支持”*”</strong></p>
+<p><img src="image/mv2.png" alt="mv2"></p>
+<h2 id="5-mkdir创建文件夹"><a href="#5-mkdir创建文件夹" class="headerlink" title="5.mkdir创建文件夹"></a>5.mkdir创建文件夹</h2><p><strong>阅读本段时：请仔细阅读一下内容</strong></p>
+<ol>
+<li>此段有SixRabbit记录</li>
+<li>查阅此段时需要用到翻译</li>
+<li>你最好阅读一下下面的话</li>
+<li>The author is very cool</li>
+<li>作者はとてもかっこいいです</li>
+<li>This is a colored egg</li>
+<li>谢谢【配合】</li>
+</ol>
+<blockquote>
+<p>mkdir(make directory)创建目录</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">mkdir [目录名]</span></span><br></pre></td></tr></table></figure>
+
+<p>或者可以是这样的格式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">mkdir /root/<span class="built_in">test</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-touch创建文件"><a href="#6-touch创建文件" class="headerlink" title="6.touch创建文件"></a>6.touch创建文件</h2><blockquote>
+<p>touch创建文件夹</p>
+</blockquote>
+<p>该指令可以创建多个文件或单个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">touch 文件名</span></span><br></pre></td></tr></table></figure>
+
+<p>实例如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">touch test.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一个为test.txt的文件</p>
+<blockquote>
+<p>创建多个文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">touch 1.text 2.text …… n.text</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意(waring): 请不要随意创建各种乱七八糟的文件</strong></p>
+<blockquote>
+<p>命名规则</p>
+</blockquote>
+<p><strong><em>\</em>1.文件名名称严格区分字符大小写；**</strong></p>
+<p><strong><em>\</em>2.文件名可以除了使用除斜线（/）以外的任意字符**</strong>；</p>
+<p>（但不介意使用特殊字符，尤其比如说前面第一个文件名叫a*b，将来查找看到是不是也感觉头晕啊，所以不建议使用特殊字符，也包括空格；不得不使用多个单词命名的可以使用下划线来连接其多个单词</p>
+<p><strong><em>\</em>3.文件名不能，不能超过255个字符；**</strong></p>
+<p><strong><em>\</em>(**</strong>不过我们说过，其实谁也不可能超过255个字符)</p>
+<p><strong><em>\</em>4.以点号开头的文件为隐藏文件，**</strong></p>
+<p>(表示我们是常见的，或者正常情况下我们是看不见的)</p>
+<h2 id="7-rm指令"><a href="#7-rm指令" class="headerlink" title="7.rm指令"></a>7.rm指令</h2><blockquote>
+<p>rm(remove)删除</p>
+</blockquote>
+<p><strong>注意：一旦删除则视为永久删除</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm [option(s)选项|额外指令] files|directories</span></span><br></pre></td></tr></table></figure>
+
+<p>额外指令:</p>
+<ul>
+<li>-i(interactive交互的):防止不小心删除文件，并给出提醒</li>
+<li>-r(recursive递归的):复制目录中所有内容</li>
+<li>-f(forc强制的:)直接删除</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm <span class="built_in">test</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>支持”*”</strong></p>
+<p><strong>注意:使用该指令删除目录是，需要-r</strong></p>
+<h2 id="8-rmdir"><a href="#8-rmdir" class="headerlink" title="8.rmdir"></a>8.rmdir</h2><blockquote>
+<p>rmdir(remove directories)删除文件夹</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rmdir <span class="built_in">test</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：该指令只可以删除空文件夹，需要删除需要用到rm -r</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm -r <span class="built_in">test</span></span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sixrabbitbychina.github.io.git/2020/07/23/linux/%E7%AC%94%E8%AE%B0/" data-id="ckcyelbkr00021sv29n0ma8l2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/23/javaWeb/%E6%B3%A8%E8%A7%A3/@WebServlet/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javaWeb/注解/@WebServlet</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/23/linux/%E7%AC%94%E8%AE%B0/">linux/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/%E6%B3%A8%E8%A7%A3/@WebServlet/">javaWeb/注解/@WebServlet</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E8%A8%80/">javaWeb/Servlet/表达式语言</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E7%AC%94%E8%AE%B0/">javaWeb/Servlet/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/jsp/3.Cookie/">javaWeb/jsp/3.Cookie</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

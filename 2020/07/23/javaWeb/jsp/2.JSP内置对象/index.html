@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>javaWeb/jsp/2.JSP内置对象 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JSP内置对象out对象out对象其作用最主要的就是向网页中输出信息。 123&lt;%	out.print(&quot;Hello world&quot;);%&gt;  request对象request对象主要处理的就是浏览器的请求信息 客户端—-发送请求—–&gt;request对象(jsp页面)&lt;———获取请求信息———服务器               方法名称         说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaWeb&#x2F;jsp&#x2F;2.JSP内置对象">
+<meta property="og:url" content="https://sixrabbitbychina.github.io.git/2020/07/23/javaWeb/jsp/2.JSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JSP内置对象out对象out对象其作用最主要的就是向网页中输出信息。 123&lt;%	out.print(&quot;Hello world&quot;);%&gt;  request对象request对象主要处理的就是浏览器的请求信息 客户端—-发送请求—–&gt;request对象(jsp页面)&lt;———获取请求信息———服务器               方法名称         说明">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-23T06:07:08.313Z">
+<meta property="article:modified_time" content="2020-06-28T04:44:24.894Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SixRabbitByChina.github.io.git"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javaWeb/jsp/2.JSP内置对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/javaWeb/jsp/2.JSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2020-07-23T06:07:08.313Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javaWeb/jsp/2.JSP内置对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h1><h2 id="out对象"><a href="#out对象" class="headerlink" title="out对象"></a>out对象</h2><p>out对象其作用最主要的就是向网页中输出信息。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	out.print(<span class="string">"Hello world"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h2><p>request对象主要处理的就是浏览器的<strong>请求信息</strong></p>
+<p>客户端—-发送请求—–&gt;request对象(jsp页面)&lt;———获取请求信息———服务器</p>
+<table>
+    <tr>
+        <td>方法名称</td>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>String getParamenter(String name)</td>
+        <td>根据<strong>页面表单</strong>组件名称获取其提交的数据</td>
+    </tr>
+    <tr>
+        <td>String[] getParamenterValues(String name)</td>
+        <td>根据<strong>一组相同页面表单组件名称</strong>获取其提交的数据</td>
+    </tr>
+    <tr>
+        <td>void getCharacterEncoding(String charset)</td>
+        <td>指定每个请求的编码格式<strong>主要用于处理中文乱码</strong>，应该在以上方法之前设定</td>
+    </tr>
+    <tr>
+    <td>RequestDispatcher getParamenterValues(String name)</td>
+    <td>返回一个javax.servlet.RequestDispatcher对象,用于转发请求</td>
+</tr>
+
+
+<p>eg:一下为登录做一个案例</p>
+<p>登录页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;form name = <span class="string">"form1"</span> method=<span class="string">"post"</span> action=<span class="string">"reginfo.jsp"</span>&gt;</span><br><span class="line">			&lt;table&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td&gt;用户名&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;&lt;input type="text" name="name"&gt;&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td height="19"&gt;密码&lt;/td&gt;</span><br><span class="line">					&lt;td height="19"&gt;&lt;input type = "password" name = "pwd"&gt;&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td&gt;信息来源&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;</span><br><span class="line">						&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"channel"</span> value = <span class="string">"报刊"</span>&gt;报刊</span><br><span class="line">						&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"channel"</span> value = <span class="string">"网络"</span>&gt;网络&lt;br/&gt;</span><br><span class="line">						&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"channel"</span> value = <span class="string">"朋友推荐"</span>&gt;朋友推荐</span><br><span class="line">						&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"channel"</span> value = <span class="string">"电话"</span>&gt;电话</span><br><span class="line">					&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan=<span class="string">"2"</span> align=<span class="string">"center"</span>&gt;</span><br><span class="line">						&lt;input type=<span class="string">"submit"</span> name=<span class="string">"Submeit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">						&lt;input type=<span class="string">"reset"</span> name=<span class="string">"Reset"</span> value=<span class="string">"取消"</span>&gt;</span><br><span class="line">					&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">			&lt;/table&gt;</span><br><span class="line">		&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>数据处理页面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% </span><br><span class="line">	request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">	String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">	String pwd = request.getParameter(<span class="string">"pwd"</span>);</span><br><span class="line">	String[] channels = request.getParameterValues(<span class="string">"channel"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="response对象"><a href="#response对象" class="headerlink" title="response对象"></a>response对象</h2><p>与request对象一样，他主要处理网页的响应</p>
+<table>
+    <tr>
+        <td>void addCookie(Cookie cookie)</td>
+        <td>向用户端添加cookie</td>
+    </tr>
+    <tr>
+        <td>void setContentType(String type)</td>
+        <td>设置HTTP响应contentType类型</td>
+    </tr>
+    <tr>
+        <td>void setContentEncoding(String charset)</td>
+        <td>设置响应所采用的字符编码级</td>
+    </tr>
+    <tr>
+        <td>void sendRedirect(String location)</td>
+        <td>将请求重新定向到一个新的URL(页面)上</td>
+    </tr>
+</table>
+
+<p>eg:假如登录成功之后跳转道欢迎界面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form name = <span class="string">"form1"</span> method=<span class="string">"post"</span> action=<span class="string">"doLogin.jsp"</span>&gt;</span><br><span class="line">		用户名:&lt;input type = <span class="string">"text"</span> name = <span class="string">"userName"</span>&gt;</span><br><span class="line">		密码:&lt;input type = <span class="string">"password"</span> name = <span class="string">"pwd"</span>&gt;</span><br><span class="line">		&lt;input type=<span class="string">"submit"</span> value = <span class="string">"登录"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>处理颜面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">		</span><br><span class="line">		String name = request.getParameter(<span class="string">"userName"</span>).trim();</span><br><span class="line">		String pwd = request.getParameter(<span class="string">"pwd"</span>).trim();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">boolean</span> vaild = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="string">"admin"</span>.equals(name) &amp;&amp; <span class="string">"admin"</span>.equals(pwd))</span><br><span class="line">		&#123;</span><br><span class="line">			vaild = <span class="keyword">true</span>;</span><br><span class="line">			</span><br><span class="line">			session.setAttribute(<span class="string">"login"</span>, name);</span><br><span class="line">			session.setMaxInactiveInterval(<span class="number">10</span>*<span class="number">60</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(vaild)</span><br><span class="line">		&#123;</span><br><span class="line">			request.getRequestDispatcher(<span class="string">"welcome.jsp"</span>).forward(request,response);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			response.sendRedirect(<span class="string">"index.jsp"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>欢迎界面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%String name = request.getParameter(<span class="string">"userName"</span>); %&gt;</span><br><span class="line">	welcome&amp;nbsp;&lt;%=name %&gt;进入页面</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h3><p>主要适用于比较简单的数据传递。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据提交网页.jsp?变量名=值</span></span><br><span class="line">response.sendRedirect(<span class="string">"welcome.jsp?userName="</span> + name);</span><br></pre></td></tr></table></figure>
+
+<p>Demo如下</p>
+<p>会将选中的颜色提交给网页</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">请从一下<span class="number">7</span>种颜色中，选择你最喜欢的颜色&lt;br/&gt;</span><br><span class="line">	&lt;a href="color.jsp?color=red"&gt;赤色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=orgin"&gt;橙色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=yello"&gt;黄色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=grenn"&gt;绿色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=skybule"&gt;青色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=bule"&gt;蓝色&lt;/a&gt;&amp;nbsp;&amp;nbsp;</span><br><span class="line">	&lt;a href="color.jsp?color=zise"&gt;紫色&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：未在tomcat中设置字符集返回值为中文会引起报错</p>
+<p>接受页面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%String color = request.getParameter(<span class="string">"color"</span>); %&gt;</span><br><span class="line">	你最喜欢的颜色是:&lt;%=color %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="session对象"><a href="#session对象" class="headerlink" title="session对象"></a>session对象</h2><p>HTTP协议是基于请求/响应模式的无状态的访问协议，“无状态”就是指<strong>每一个HTTP请求都是独立的</strong>，服务器不会保存以往的请求和会话记录。</p>
+<p>当用户发生请求时，无论是不是第一次访问，都会当作第一个来对待，所以就必须有一种机制来标识一个用户的唯一标识，同时记录该用户的状态，这就是<strong>会话跟踪机制</strong></p>
+<h3 id="什么是会话"><a href="#什么是会话" class="headerlink" title="什么是会话?"></a>什么是会话?</h3><p>一个会话就是指在一段时间中，一个用户与web服务器的一连串相关的交互过程（其中包含请&amp;响应过程）。</p>
+<p>当用户向服务器发起一次请求时，服务器就会为该用户创建<strong>一个唯一会话</strong>，直到用户访问结束，如果一个用户发起请求，服务器就会判断是否已经创建与该用户的为已请求</p>
+<p>​        服务器会根据sessionid这个唯一标识来判断是否和该用户创建会话，如果请求中包含一个sessionid，说明已经建立了一个会话，服务器会根据这个sessionid将相应的会话对象读取出来</p>
+<p>如果没有，就创建一个新的会话。</p>
+<p>sessionid是采用cookie来实现的</p>
+<table>
+    <tr>
+        <td>方法名称</td>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>String getId</td>
+        <td>获取sessionid</td>
+    </tr>
+    <tr>
+        <td>void setMaxInactiveInterval(int interval)</td>
+        <td>设定session的非活动时间</td>
+    </tr>
+    <tr>
+        <td>int getMaxInactiveInterval()</td>
+        <td>获取session的有效非活动时间，以秒为单位</td>
+    </tr>
+    <tr>
+        <td>void invalidate</td>
+        <td>设置session对象失效</td>
+    </tr>
+    <tr>
+        <td>void setAttribute(String key,Object value)</td>
+        <td>以key/value(键值对)的形式将对象保存道session中</td>
+    </tr>
+    <tr>
+        <td>Object getAtttribute(String key)</td>
+        <td>通过key(键)获取session保存的对象</td>
+    </tr>
+    <tr>
+        <td>void removeAttribute(String key)</td>
+        <td>从session中删除指定的key(键)对象</td>
+    </tr>
+</table>
+
+<p><strong>如何使用session对象实现权限的控制</strong></p>
+<ol>
+<li>用户在登录页面输入用户名和密码。</li>
+<li>在登陆处理页面进行验证。</li>
+<li>在会话中，检查是否登录成功，保存用户信息，跳转到管理员页面。</li>
+<li>在管理员页面经行校验</li>
+<li>失败返回登录页面</li>
+</ol>
+<p>登录处理页面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">		</span><br><span class="line">		String name = request.getParameter(<span class="string">"userName"</span>).trim();</span><br><span class="line">		String pwd = request.getParameter(<span class="string">"pwd"</span>).trim();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">boolean</span> vaild = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="string">"admin"</span>.equals(name) &amp;&amp; <span class="string">"admin"</span>.equals(pwd))</span><br><span class="line">		&#123;</span><br><span class="line">			vaild = <span class="keyword">true</span>;</span><br><span class="line">			</span><br><span class="line">			session.setAttribute(<span class="string">"login"</span>, name);</span><br><span class="line">			session.setMaxInactiveInterval(<span class="number">10</span>*<span class="number">60</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(vaild)</span><br><span class="line">		&#123;</span><br><span class="line">			request.getRequestDispatcher(<span class="string">"welcome.jsp"</span>).forward(request,response);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			response.sendRedirect(<span class="string">"index.jsp"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>管理员操作界面</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		String login = (String)session.getAttribute(<span class="string">"login"</span>);</span><br><span class="line">		<span class="keyword">if</span>(login==<span class="keyword">null</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			response.sendRedirect(<span class="string">"index.jsp"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	%&gt;</span><br><span class="line">	您好，欢迎您!</span><br></pre></td></tr></table></figure>
+
+<h3 id="会话失效"><a href="#会话失效" class="headerlink" title="会话失效"></a><strong>会话失效</strong></h3><p>会话有时效，使会话失效的方式有两种，一种是<strong>会话超时</strong>，另一种是<strong>手动调用方法设置失效</strong></p>
+<p>会话超时是指两次请求的时间间隔远远的超过了服务器允许的最大时间间隔，时间间隔可以通过三种方法设置。</p>
+<p>（1）通过session对象的setMaxInactivelnterval()设置</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	session.setAttribute(<span class="string">"login"</span>,<span class="string">"admin"</span>);</span><br><span class="line">	<span class="comment">//参数的单位是秒，即十分钟之后对象失效</span></span><br><span class="line">	session.setMaxInactivelnterval(<span class="number">600</span>);</span><br><span class="line">	……</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(2)在项目的web.xml中设置代码。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>10<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>单位是分钟。设置为0或者为负数表示永不超时。</p>
+<p>(3)在服务器中设置，在Tomcat目录/conf/web.xml中找到<session-config>元素。修改方式如上</p>
+<p>手动方法失效是通过session对象的invalidate()方法实现，主要用于用户注销的场合。如果只想清空对话中的某个数据对象，可以调用session.removeAttribute(String key)方法。</p>
+<h2 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h2><p>当然，有些地方有需要用到二级验证，那就可以使用include指令</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"应用文件目录"</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>二级验证写入一个独立的jsp文件中</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		String login = (String)session.getAttribute(<span class="string">"login"</span>);</span><br><span class="line">		<span class="keyword">if</span>(login==<span class="keyword">null</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			response.sendRedirect(<span class="string">"index.jsp"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后引用就行。</p>
+<h2 id="application"><a href="#application" class="headerlink" title="application"></a>application</h2><p>application相当于系统的<strong>全局变量</strong>，用于<strong>同一个</strong>应用内的所有用户之间的数据<strong>共享</strong></p>
+<table>
+    <tr>
+        <td>方法名称</td>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>void setAttribute(String key,Object value)</td>
+        <td>以key/value(键值对)的形式将数据存储到application中</td>
+    </tr>
+    <tr>
+        <tr>Object getAttribute(String key)</tr>
+        <tr>通过key获取application中存储的对象</tr>
+    </tr>
+    <tr>
+        <td>String getRealPath(String path)</td>
+        <td>返回相对路径的真实路径</td>
+    </tr>
+</table>
+
+<p>记录当前网站的访问人数</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		Integer count = (Integer)application.getAttribute(<span class="string">"count"</span>);</span><br><span class="line">		<span class="keyword">if</span>(count != <span class="keyword">null</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			count = count + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			count = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		application.setAttribute(<span class="string">"count"</span>, count);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展点：pageContext"><a href="#扩展点：pageContext" class="headerlink" title="扩展点：pageContext"></a>扩展点：pageContext</h2><p>pageContext提供了JSP在运行时和其相关的环境信息的能力，可以通过pageContext对象访问和当前页面有关的作用域和属性</p>
+<table>
+    <tr>
+        <td>ServletRequest getRequest()</td>
+        <td>获得request对象</td>
+    </tr>
+    <tr>
+        <td>ServletResponse getResponse()</td>
+        <td>获得response对象</td>
+    </tr>
+    <tr>
+        <td>HttpSession getSession()</td>
+        <td>获得session</td>
+    </tr>
+    <tr>
+        <td>JspWriter getOut()</td>
+        <td>获得out对象</td>
+    </tr>
+    <tr>
+        <td>void setAttribute()</td>
+        <td>保存属性</td>
+    </tr>
+    <tr>
+        <td>Object getAttribute()</td>
+        <td>获得属性</td>
+    </tr>
+    <tr>
+        <td>void include()</td>
+        <td>请求指定的资源，并将目标的响应结果包含在调用页面的响应中</td>
+    </tr>
+    <tr>
+        <td>page</td>
+        <td>表示当前页面，类似于this</td>
+    </tr>
+    <tr>
+        <td>config</td>
+        <td>用于存放JSP编译后的初始数据</td>
+    </tr>
+    <tr>
+        <td>exception</td>
+        <td>表示JSP页面运行时产生的异常和错误信息，该对象只能在错误页面(page指令中设定isErrorPage为ture)才能使用</td>
+    </tr>
+</table>
+
+<p>Page作用域指单一JSP页面范围，page作用域的对象只能在创建该对象的页面中访问。</p>
+<p>Demo</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	String name = <span class="string">"request"</span>;</span><br><span class="line">	request.setAttribute(<span class="string">"name"</span>, name);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;strong&gt;</span><br><span class="line">	testOne:&lt;%=pageContext.getAttribute(<span class="string">"name"</span>) %&gt;</span><br><span class="line">&lt;/strong&gt;</span><br><span class="line">&lt;br/&gt;</span><br><span class="line">&lt;%</span><br><span class="line">	pageContext.include(<span class="string">"testTwo.jsp"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong&gt;testTwo:&lt;%=pageContext.getAttribute("name") %&gt;&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="request作用域"><a href="#request作用域" class="headerlink" title="request作用域"></a>request作用域</h2><p>pageContext的作用域和当前页面绑在一起，而request的作用域则是与客户端的请求绑在一起</p>
+<p> request作用域在页面转发或者包含的页面中，都可以共享同一个request作用域，访问其中的数据</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	String name = <span class="string">"request"</span>;</span><br><span class="line">	request.setAttribute(<span class="string">"name"</span>, name);</span><br><span class="line">	request.getRequestDispatcher(<span class="string">"testTwo.jsp"</span>).forward(request,response);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong&gt;testTwo:&lt;%=request.getAttribute("name") %&gt;&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="session作用域"><a href="#session作用域" class="headerlink" title="session作用域"></a>session作用域</h2><p>在会话有效期中，任何页面都可以访问其中的数据</p>
+<p>不做演示</p>
+<h2 id="application作用域"><a href="#application作用域" class="headerlink" title="application作用域"></a>application作用域</h2><p>任何页面都可以访问其中存储的信息</p>
+<p>不做演示</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sixrabbitbychina.github.io.git/2020/07/23/javaWeb/jsp/2.JSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" data-id="ckcyelbny00041sv212k6041o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/23/javaWeb/jsp/3.Cookie/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javaWeb/jsp/3.Cookie
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/23/javaWeb/ServletContext/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javaWeb/ServletContext</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/23/linux/%E7%AC%94%E8%AE%B0/">linux/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/%E6%B3%A8%E8%A7%A3/@WebServlet/">javaWeb/注解/@WebServlet</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E8%A8%80/">javaWeb/Servlet/表达式语言</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/Servlet/%E7%AC%94%E8%AE%B0/">javaWeb/Servlet/笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/javaWeb/jsp/3.Cookie/">javaWeb/jsp/3.Cookie</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
